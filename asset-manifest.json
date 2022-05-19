@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Mealicious-ReactProject/static/css/main.91bcec0d.css",
+    "main.js": "/Mealicious-ReactProject/static/js/main.dee12319.js",
+    "index.html": "/Mealicious-ReactProject/index.html",
+    "main.91bcec0d.css.map": "/Mealicious-ReactProject/static/css/main.91bcec0d.css.map",
+    "main.dee12319.js.map": "/Mealicious-ReactProject/static/js/main.dee12319.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91bcec0d.css",
+    "static/js/main.dee12319.js"
+  ]
+}
