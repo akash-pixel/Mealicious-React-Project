@@ -12,7 +12,7 @@ function App() {
         <Nav>
           <GiKnifeFork />
           <Logo>
-            <Link to={"/"}>
+            <Link to={"/Mealicious-ReactProject"}>
               <h1 className="companyName"> Mealicios</h1>
             </Link>
           </Logo>
