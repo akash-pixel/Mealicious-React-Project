@@ -6,29 +6,18 @@ import { Link } from 'react-router-dom';
 
 function Veggie() {
 
-  const [veggie, setVeggie] = useState([]);
+    const [veggie, setVeggie] = useState([]);
 
     const getVeggie  = async()=>{
+        const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`;
+        const api = await fetch(url);
+        const data = await api.json();
 
-        // const check = localStorage.getItem("veggie");
-
-        // if(check){
-        //     setVeggie( JSON.parse(check) );
-        // }
-        // else{
-            const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`;
-            const api = await fetch(url);
-            const data = await api.json();
-
-            localStorage.setItem("veggie",JSON.stringify(data.recipes));
-            setVeggie(data.recipes);
-            // console.log(data.recipes);
-        // }
-
+        setVeggie(data.recipes);
     }
 
     useEffect(() => {
-      getVeggie()
+        getVeggie()
     }, [])  
 
   return (

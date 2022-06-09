@@ -1,7 +1,6 @@
 {
   "name": "mealicious",
-  "version": "0.1.0",
-  "homepage": "https://akash-pixel.github.io/Mealicious-ReactProject",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@splidejs/react-splide": "^0.6.20",
@@ -22,7 +21,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-dotenv && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-dotenv && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

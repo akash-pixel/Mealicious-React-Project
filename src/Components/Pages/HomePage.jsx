@@ -12,7 +12,8 @@ function HomePage() {
     transition={{duraiton:0.5}}
     >
         <Veggie/>
-        <Popular/>
+        <Popular title="Popular Recipes" />
+        <Popular title="Exotic Recipes" />
     </motion.div>
   )
 }

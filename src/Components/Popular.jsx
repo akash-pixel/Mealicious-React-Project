@@ -1,32 +1,19 @@
 import React,{useEffect, useState} from 'react'
-import env from 'react-dotenv';
 import styled from 'styled-components';
 import {Splide, SplideSlide } from '@splidejs/react-splide'; 
 import "@splidejs/splide/dist/css/splide.min.css";
-import { Link } from 'react-router-dom';
-// import { Item } from 'framer-motion/types/components/Reorder/Item';
+import { NavLink } from 'react-router-dom';
 
-function Popular() {
+function Popular( {title} ) {
 
     const [popular, setPopular] = useState([]);
 
     const getPopular  = async()=>{
+        const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=12`
+        const api = await fetch(url);
+        const data = await api.json();
 
-        // const check = localStorage.getItem("popular");
-
-        // if(check){
-        //     setPopular( JSON.parse(check) );
-        // }
-        // else{
-            const url = `https://api.spoonacular.com/recipes/random?apiKey=${env.REACT_APP_API_KEY}&number=9`
-            const api = await fetch(url);
-            const data = await api.json();
-
-            localStorage.setItem("popular",JSON.stringify(data.recipes));
-            setPopular(data.recipes);
-            // console.log(data.recipes);
-        // }
-
+        setPopular(data.recipes);
     }
 
     useEffect(() => {
@@ -37,7 +24,7 @@ function Popular() {
   return (
     <div>
         <Wrapper>
-            <h3>Popular Recipes</h3>
+            <h3>{title}</h3>
             <Splide 
                 options={{
                     perPage:4,
@@ -51,11 +38,11 @@ function Popular() {
                 return (
                     <SplideSlide key={recipe.id}>
                         <Card>
-                            <Link to={"/recipe/"+recipe.id} >
+                            <NavLink to={"/recipe/"+recipe.id} >
                                 <p>{recipe.title}</p>
                                 <img src={recipe.image} alt={recipe.title} />
                                 <Gradient/>
-                            </Link>
+                            </NavLink>
                         </Card>
                     </SplideSlide>
                 )

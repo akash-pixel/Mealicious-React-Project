@@ -8,11 +8,11 @@ import Search from "./Components/Search";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Nav>
           <GiKnifeFork />
           <Logo>
-            <Link to={"/Mealicious-ReactProject"}>
+            <Link to={"/"}>
               <h1 className="companyName"> Mealicios</h1>
             </Link>
           </Logo>
